@@ -10,6 +10,8 @@ Run `node ports` and you'll see what ports your Launchpad is running on.
 
 Set the environment variables `LAUNCHPAD_IN` and `LAUNCHPAD_OUT` accordingly.
 
+![Environment Variable Setup](http://i.gyazo.com/d81e6ef2c0c3a3480a671bddb97bb980.png)
+
 ## Running the demo
 
 `node index`. Simple as that.
