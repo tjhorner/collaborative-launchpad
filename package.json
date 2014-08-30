@@ -1,6 +1,6 @@
 {
   "name": "collaborative-launchpad",
-  "description": "Control your Novation Launchpad's lights over the Internet. See README file for setup details.",
+  "description": "Control your Novation Launchpad's lights over the internet. See README file for setup details.",
   "version": "0.1",
   "keywords": [
     "launchpad",
@@ -18,9 +18,11 @@
     "index.js"
   ],
   "dependencies": {
-    "midi-launchpad": "",
     "socket.io": "",
-    "express": ""
+    "express": "",
+    "backbone": ">=1.1.0",
+    "underscore": ">=1.5.2",
+    "midi": ">=0.7.0"
   },
   "repositories": [
     {

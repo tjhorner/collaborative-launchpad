@@ -39,8 +39,8 @@ app.get('/', function(req, res){
 });
 http.listen(3000);
 io.on('connection', function(socket){
-	if(!launchpadReady)
-		socket.emit('socket:error', {error: 'Launchpad not ready! Try again later.', extra: errors});
+	// if(!launchpadReady)
+		// socket.emit('socket:error', {error: 'Launchpad not ready! Try again later.', extra: errors});
 });
 
 try{
