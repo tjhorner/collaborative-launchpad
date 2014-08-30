@@ -17,7 +17,7 @@ var getKeyByValue = function(obj, value){
 var app = require('express')();
 var http = require('http').Server(app);
 try{
-	var midi = require('midi-launchpad').connect(0, 1, false);
+	var midi = require('midi-launchpad').connect(parseInt(process.env.LAUNCHPAD_IN), parseInt(process.env.LAUNCHPAD_OUT), false);
 }catch(e){
 	var errors = ['Could not connect to Launchpad'];
 }
