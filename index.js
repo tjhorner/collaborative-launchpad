@@ -15,6 +15,7 @@ var getKeyByValue = function(obj, value){
 }
 
 var app = require('express')();
+var express = require('express');
 var http = require('http').Server(app);
 try{
 	var midi = require('midi-launchpad').connect(parseInt(process.env.LAUNCHPAD_IN), parseInt(process.env.LAUNCHPAD_OUT), false);
@@ -37,6 +38,9 @@ var banned = [
 app.get('/', function(req, res){
 	res.sendfile('index.html');
 });
+
+app.use(express.static(__dirname + '/public'));
+
 http.listen(3000);
 io.on('connection', function(socket){
 	if(!launchpadReady)
