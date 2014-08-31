@@ -50,7 +50,6 @@ io.on('connection', function(socket){
 try{
 	midi.on("ready", function(launchpad){
 		launchpadReady = true;
-		var defaultColor = launchpad.colors.green.high;
 
 		toggleButton = function(button, json){
 			try{
@@ -67,7 +66,7 @@ try{
 		launchpad.clear();
 		launchpad.on("press", function(e){
 			var button = launchpad.getButton(e.x, e.y);
-			var buttonJSON = {x: e.x, y: e.y, color: defaultColor};
+			var buttonJSON = {x: e.x, y: e.y, color: 'green'};
 			toggleButton(button, buttonJSON);
 		});
 
@@ -81,7 +80,7 @@ try{
 			for(var x = 0; x < 9; x++) {
 				for(var y = 0; y < 9; y++) {
 					var button = launchpad.getButton(x, y);
-					var buttonColor = getKeyByValue(colors, button.getState()) || defaultColor;
+					var buttonColor = getKeyByValue(colors, button.getState()) || colors.red;
 					var buttonJSON = {x: x, y: y, color: buttonColor};
 					if(button.getState() === 0){
 						socket.emit('launchpad:off', buttonJSON);

@@ -1,7 +1,22 @@
+function playSound() {
+	source.noteOn(context.currentTime);
+}
+
+function routeSound(data) {
+	source = context.createBufferSource();
+	buffer = context.createBuffer(data, true);
+	source.buffer = buffer;
+	source.connect(context.destination);
+	playSound(source);
+}
+
 var socket = io();
 
 socket.on('launchpad:on', function(m){
 	$($('[data-y="' + m.y + '"]').find('td')[m.x]).removeClass('red orange green yellow').addClass('on ' + m.color);
+	if(m.y === 8 && m.x === 0){
+
+	}
 });
 
 socket.on('launchpad:off', function(m){
