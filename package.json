@@ -1,7 +1,7 @@
 {
   "name": "collaborative-launchpad",
   "description": "Control your Novation Launchpad's lights over the internet. See README file for setup details.",
-  "version": "0.1",
+  "version": "0.0.1",
   "keywords": [
     "launchpad",
     "midi",
